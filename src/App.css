@@ -1,38 +1,334 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap");
+
+main {
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.button {
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 0 4px #999;
+  cursor: pointer;
+  outline: none;
+
+  display: block;
+  margin: 2% auto;
+  max-width: 35%;
+  padding: 8px 18px;
+  width: auto;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #dddddd radial-gradient(circle, transparent 1%, #dddddd 1%)
+    center/15000%;
+  color: #000;
+}
+.ripple:active {
+  background-color: #dddddd;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* - - - - - - - - - - Title - - - - - - - - - - */
+
+.section-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  margin: 5% 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* - - - - - - - - - - Header - - - - - - - - - - */
+
+.section--header {
+  background-image: linear-gradient(180deg, #f6fafd 0%, #ffffff 100%);
+  height: 100vh;
+  margin-bottom: 0;
+  padding-top: 50%;
+}
+
+.header__text {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.header__name {
+  color: #c33764;
+}
+
+@media only screen and (min-width: 481px) {
+  .section--header {
+    padding-top: 30%;
+  }
+
+  .header__text {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .section--header {
+    padding-top: 15%;
+  }
+
+  .header__text {
+    font-size: 3rem;
+  }
+
+  .header__name {
+    background: -webkit-linear-gradient(
+      to bottom right,
+      #c33764 50%,
+      #1d2671 100%
+    );
+    background: -moz-linear-gradient(
+      to bottom right,
+      #c33764 50%,
+      #1d2671 100%
+    );
+    background: linear-gradient(to bottom right, #c33764 50%, #1d2671 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* - - - - - - - - - - About - - - - - - - - - - */
+
+.section--about {
+  background-image: linear-gradient(135deg, #c33764 0%, #1d2671 100%);
+  color: #fff;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 10%;
+}
+
+.about__img {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  display: block;
+  margin: 0 auto;
+  max-height: 80vh;
+  max-width: 85%;
+  min-width: 280px;
+}
+
+.about__text {
+  margin: 0 auto;
+  max-width: 85%;
+  padding-top: 10%;
+}
+
+@media only screen and (min-width: 769px) {
+  .section--about {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+}
+
+/* - - - - - - - - - - Resume - - - - - - - - - - */
+
+.section-resume {
+  background: #fff;
+  color: #000;
+  margin: 5%;
+}
+
+.resume-title {
+  margin: 5% 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-resume p {
+  margin-left: 5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.resume-button {
+  margin: 10% 20%;
+}
+
+@media only screen and (min-width: 769px) {
+  .section-resume {
+    margin: 5% 10%;
+  }
+
+  .section-resume p {
+    margin-left: 0;
+    max-width: 50vw;
+  }
+
+  .experience-container {
+    margin-left: 5%;
+    max-width: 40vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* - - - - - - - - - - Projects - - - - - - - - - - */
+
+.section--projects {
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+.projects__container {
+  margin: 5% 0;
+}
+
+.projects__title {
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.projects__image {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 10% 0;
+  max-width: 100%;
+  min-width: 280px;
+}
+
+@media only screen and (min-width: 769px) {
+  .section--projects {
+    align-items: center;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+  }
+
+  .projects__image {
+    margin-top: 0;
+  }
+}
+
+/* - - - - - - - - - - Contact - - - - - - - - - - */
+
+.section--contact {
+  color: #fff;
+  text-align: center;
+
+  background-image: linear-gradient(135deg, #c33764 0%, #1d2671 100%);
+  overflow: hidden;
+  padding: 2% 0;
+}
+
+.social__container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.social__links {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0% 5% 5% 5%;
+  transition: all 0.4s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social__links:hover {
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+@media only screen and (min-width: 769px) {
+  .section--contact {
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    margin-bottom: -1px;
+    margin-top: -8rem;
+    padding: 8% 0 2% 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .button__contact {
+    font-size: 1.5rem;
+    max-width: 25%;
+  }
+
+  .social__links {
+    font-size: 3rem;
+  }
+}
+
+/* - - - - - - - - - - Footer - - - - - - - - - - */
+
+.section--footer {
+  background: #2b2b2b;
+  overflow: hidden;
+  text-align: center;
+}
+
+.footer__text {
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 2% 0;
+}
+
+.footer__underline {
+  color: #fff;
+  position: relative;
+}
+
+.footer__underline::before {
+  background-color: #fff;
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer__underline:hover {
+  color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__underline:hover::before {
+    color: #fff;
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .footer__links {
+    font-size: 2rem;
+  }
+
+  .footer__text {
+    font-size: 1.225rem;
   }
 }
